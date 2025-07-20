@@ -3,6 +3,7 @@
 @theme {
   --translate-101: 101%;
   --animate-marquee: marquee 15s linear infinite;
+  --animate-shine: shine 5s linear infinite;
 
   @keyframes marquee {
     from {
@@ -11,5 +12,29 @@
     to {
       transform: translateX(-50%);
     }
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: -100%;
+    }
+  }
+}
+
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-45%, -40%) scale(1);
   }
 }
