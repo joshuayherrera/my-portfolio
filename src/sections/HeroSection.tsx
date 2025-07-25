@@ -19,8 +19,8 @@ function HeroSection() {
         className="-top-40 left-0 md:-top-20 md:left-60"
         fill="white"
       />
-      <div className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
-        <div className="flex justify-center items-center w-full">
+      <section className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
+        <article className="flex justify-center items-center w-full">
           <SplitText
             text="Joshua Alvarez"
             className="text-[#D9D9D9] bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold md:text-7xl"
@@ -35,16 +35,16 @@ function HeroSection() {
             textAlign="center"
             onLetterAnimationComplete={handleAnimationComplete}
           />
-        </div>
-        <div className="flex justify-center items-center w-full">
+        </article>
+        <article className="flex justify-center items-center w-full">
           <ShinyText
             text="A creative Frontend Developer with 2+ years of experience in building high-performance, scalable, and responsive web solutions."
             disabled={false}
             speed={5}
             className="mx-auto mt-4 max-w-xl text-center text-lg font-medium"
           />
-        </div>
-      </div>
+        </article>
+      </section>
     </main>
   );
 }

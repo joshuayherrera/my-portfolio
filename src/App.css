@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+html,
+body {
+  * {
+    cursor: none;
+  }
+}
+
 @theme {
   --translate-101: 101%;
   --animate-marquee: marquee 15s linear infinite;

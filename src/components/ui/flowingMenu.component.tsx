@@ -1,5 +1,6 @@
 import React from "react";
 import { gsap } from "gsap";
+import { useCursorHover } from "../../hooks/useCursorHover";
 
 interface MenuItemProps {
   link: string;
@@ -88,6 +89,7 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
     const itemRef = React.useRef<HTMLDivElement>(null);
     const marqueeRef = React.useRef<HTMLDivElement>(null);
     const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
+    const menuLinkCursorProps = useCursorHover("menu-link");
 
     // Combinar refs
     React.useImperativeHandle(ref, () => itemRef.current!, []);
@@ -175,9 +177,16 @@ const MenuItem = React.forwardRef<HTMLDivElement, MenuItemProps>(
         <a
           className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-white text-[4vh] hover:text-[#060010] focus:text-white focus-visible:text-[#060010]"
           href={link}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
+          onMouseEnter={(e) => {
+            handleMouseEnter(e);
+            menuLinkCursorProps.onMouseEnter();
+          }}
+          onMouseLeave={(e) => {
+            handleMouseLeave(e);
+            menuLinkCursorProps.onMouseLeave();
+          }}
           onClick={handleClick}
+          data-cursor="menu-link"
         >
           {text}
         </a>

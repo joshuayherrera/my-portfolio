@@ -3,12 +3,14 @@ import { menuItems } from "../data/menuItems";
 import FlowingMenu from "./ui/flowingMenu.component";
 import { Menu, X } from "lucide-react";
 import { gsap } from "gsap";
+import { useCursorHover } from "../hooks/useCursorHover";
 
 function MenuButton() {
   const [isVisible, setIsVisible] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const backdropRef = useRef<HTMLDivElement>(null);
   const isAnimating = useRef(false);
+  const menuCursorProps = useCursorHover("menu");
 
   const openMenu = () => {
     if (isAnimating.current) return;
@@ -108,6 +110,8 @@ function MenuButton() {
         className="fixed top-6 right-6 z-50 p-3 bg-white rounded-full hover:cursor-pointer 
         shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
         aria-label={isVisible ? "Cerrar Menu" : "Abrir Menu"}
+        {...menuCursorProps}
+        data-cursor="menu"
       >
         {isVisible ? (
           <X className="w-6 h-6 text-black" />

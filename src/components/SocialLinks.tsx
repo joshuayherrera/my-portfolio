@@ -60,9 +60,9 @@ function SocialLinks() {
   }, []);
 
   return (
-    <div ref={containerRef} className="fixed bottom-6 left-6 z-50">
+    <aside ref={containerRef} className="fixed bottom-6 left-6 z-50">
       <FloatingDock mobileClassName="translate-y-0" items={links} />
-    </div>
+    </aside>
   );
 }
 

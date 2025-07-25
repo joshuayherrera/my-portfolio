@@ -10,6 +10,7 @@ import {
 } from "motion/react";
 
 import { useRef, useState } from "react";
+import { useCursorHover } from "../../hooks/useCursorHover";
 
 export const FloatingDock = ({
   items,
@@ -48,6 +49,7 @@ const FloatingDockMobile = ({
   className?: string;
 }) => {
   const [open, setOpen] = useState(false);
+  const mobileCursorProps = useCursorHover("button");
   return (
     <div className={cn("relative block md:hidden", className)}>
       <AnimatePresence>
@@ -79,6 +81,8 @@ const FloatingDockMobile = ({
                   onClick={item.onClick}
                   key={item.title}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-900"
+                  {...mobileCursorProps}
+                  data-cursor="button"
                 >
                   <div className="h-4 w-4">{item.icon}</div>
                 </a>
@@ -90,6 +94,8 @@ const FloatingDockMobile = ({
       <button
         onClick={() => setOpen(!open)}
         className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-50 dark:bg-neutral-800"
+        {...mobileCursorProps}
+        data-cursor="button"
       >
         <IconLayoutNavbarCollapse className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
       </button>
@@ -111,14 +117,21 @@ const FloatingDockDesktop = ({
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);
+  const dockCursorProps = useCursorHover("dock");
+
   return (
     <motion.div
       onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
+      onMouseEnter={dockCursorProps.onMouseEnter}
+      onMouseLeave={() => {
+        mouseX.set(Infinity);
+        dockCursorProps.onMouseLeave();
+      }}
       className={cn(
         "mx-auto hidden h-16 items-end gap-4 rounded-2xl bg-gray-50 px-4 pb-3 md:flex dark:bg-neutral-900",
         className
       )}
+      data-cursor="dock"
     >
       {items.map((item) => (
         <IconContainer mouseX={mouseX} key={item.title} {...item} />
