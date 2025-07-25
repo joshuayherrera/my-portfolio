@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-html,
-body {
-  * {
-    cursor: none;
+@layer base {
+  @font-face {
+    font-family: 'stardom';
+    src: url('/fonts/Stardom-Regular.woff2') format('woff2');
   }
 }
 

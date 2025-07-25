@@ -1,19 +1,29 @@
+import { useState } from "react";
 import "./App.css";
-import MenuButton from "./components/MenuButton";
 import SocialLinks from "./components/SocialLinks";
 import HeroSection from "./sections/HeroSection";
-import { CursorProvider } from "./components/CustomCursor";
+import Menu from "./components/Menu";
+import Preloader from "./components/Preloader";
 
 function App() {
-  return (
-    <CursorProvider>
-      <div className="min-h-screen relative">
-        <HeroSection />
+  const [isLoading, setIsLoading] = useState(true);
 
-        <MenuButton />
+  const handlePreloaderComplete = () => {
+    setIsLoading(false);
+  };
+
+  return (
+    <>
+      {/* Contenido principal siempre visible pero con h1 inicialmente oculto */}
+      <Menu />
+      <div className="min-h-screen relative">
+        <HeroSection isVisible={!isLoading} />
         <SocialLinks />
       </div>
-    </CursorProvider>
+
+      {/* Preloader encima del contenido */}
+      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
+    </>
   );
 }
 

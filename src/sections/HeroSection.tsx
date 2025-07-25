@@ -1,12 +1,46 @@
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import { Spotlight } from "../components/ui/spotlight.component";
-import SplitText from "../components/ui/splitText.component";
 import ShinyText from "../components/ui/shinyText.component";
 import { cn } from "../lib/utils";
 
-function HeroSection() {
-  const handleAnimationComplete = () => {
-    console.log("All letters have animated!");
-  };
+interface HeroSectionProps {
+  isVisible?: boolean;
+}
+
+function HeroSection({ isVisible = true }: HeroSectionProps) {
+  const nameRef = useRef<HTMLHeadingElement>(null);
+  const subtitleRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isVisible && nameRef.current && subtitleRef.current) {
+      // Timeline para la animación de entrada del HeroSection
+      const tl = gsap.timeline();
+
+      // Configuración inicial
+      gsap.set([nameRef.current, subtitleRef.current], {
+        opacity: 0,
+        y: 30,
+      });
+
+      // Animación de entrada
+      tl.to(nameRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+      }).to(
+        subtitleRef.current,
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: "power2.out",
+        },
+        "-=0.3"
+      );
+    }
+  }, [isVisible]);
   return (
     <main className="relative flex h-screen w-screen overflow-hidden bg-black/[0.96] antialiased md:items-center md:justify-center">
       <div
@@ -21,22 +55,14 @@ function HeroSection() {
       />
       <section className="relative z-10 mx-auto w-full max-w-7xl p-4 pt-20 md:pt-0">
         <article className="flex justify-center items-center w-full">
-          <SplitText
-            text="Joshua Alvarez"
-            className="text-[#D9D9D9] bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold md:text-7xl"
-            delay={100}
-            duration={2}
-            ease="elastic.out(1, 0.3)"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
-            onLetterAnimationComplete={handleAnimationComplete}
-          />
+          <h1 ref={nameRef} className="text-4xl text-white font-bold">
+            Joshua Alvarez
+          </h1>
         </article>
-        <article className="flex justify-center items-center w-full">
+        <article
+          ref={subtitleRef}
+          className="flex justify-center items-center w-full"
+        >
           <ShinyText
             text="A creative Frontend Developer with 2+ years of experience in building high-performance, scalable, and responsive web solutions."
             disabled={false}
