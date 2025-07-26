@@ -2,12 +2,13 @@
 
 @layer base {
   @font-face {
-    font-family: 'stardom';
-    src: url('/fonts/Stardom-Regular.woff2') format('woff2');
+    font-family: Stardom;
+    src: url("/fonts/Stardom-Regular.woff2") format("woff2");
   }
 }
 
 @theme {
+  --font-stardom: Stardom, "sans-serif";
   --translate-101: 101%;
   --animate-marquee: marquee 15s linear infinite;
   --animate-shine: shine 5s linear infinite;
@@ -32,16 +33,32 @@
 }
 
 @theme inline {
-  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  --animate-spotlight: spotlight-move 12s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
-@keyframes spotlight {
+@keyframes spotlight-move {
   0% {
-    opacity: 0;
-    transform: translate(-72%, -62%) scale(0.5);
+    opacity: 0.4;
+    transform: translate(-85%, -52%) scale(0.85); /* Inicia más a la izquierda */
+  }
+  20% {
+    opacity: 0.7;
+    transform: translate(-65%, -48%) scale(0.95); /* Transición suave */
+  }
+  40% {
+    opacity: 1;
+    transform: translate(-45%, -42%) scale(1.05); /* Centro-izquierda */
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-25%, -38%) scale(1.08); /* Centro-derecha */
+  }
+  80% {
+    opacity: 0.7;
+    transform: translate(-15%, -36%) scale(0.95); /* Se mueve hacia la derecha */
   }
   100% {
-    opacity: 1;
-    transform: translate(-45%, -40%) scale(1);
+    opacity: 0.4;
+    transform: translate(-85%, -52%) scale(0.85); /* Regresa suavemente al inicio */
   }
 }

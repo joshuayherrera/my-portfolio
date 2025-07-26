@@ -4,6 +4,7 @@ import SocialLinks from "./components/SocialLinks";
 import HeroSection from "./sections/HeroSection";
 import Menu from "./components/Menu";
 import Preloader from "./components/Preloader";
+import ProfessionalExperience from "./sections/ProfessionalExperience";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,6 +19,7 @@ function App() {
       <Menu />
       <div className="min-h-screen relative">
         <HeroSection isVisible={!isLoading} />
+        <ProfessionalExperience />
         <SocialLinks />
       </div>
 

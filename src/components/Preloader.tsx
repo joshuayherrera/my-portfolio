@@ -53,7 +53,7 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       },
     })
       // Pausa para el impacto visual
-      .to({}, { duration: 1.2 })
+      .to({}, { duration: 0.5 })
       // Animación de salida con efecto disperso
       .to(letterElements, {
         opacity: 0,
@@ -86,13 +86,13 @@ const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   return (
     <div
       ref={preloaderRef}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black px-4"
     >
       <div
         ref={textRef}
-        className="text-6xl md:text-8xl lg:text-9xl font-bold text-white text-center leading-tight"
+        className="text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold text-white text-center leading-tight max-w-full"
         style={{
-          fontFamily: "inherit",
+          fontFamily: "stardom",
           perspective: "1000px",
         }}
       />

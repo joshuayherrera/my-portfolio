@@ -177,6 +177,11 @@ function Menu() {
     [isOpen, isAnimating, cleanupPreviewImages]
   );
 
+  const handleLinkClick = useCallback(() => {
+    if (!isOpen || isAnimating) return;
+    closeMenu();
+  }, [isOpen, isAnimating, closeMenu]);
+
   useEffect(() => {
     const menuToggle = menuToggleRef.current;
     const menuLinks = document.querySelectorAll(".link a");
@@ -190,6 +195,10 @@ function Menu() {
       handleLinkHover(target);
     };
 
+    const handleLinkClickEvent = () => {
+      handleLinkClick();
+    };
+
     // Add event listeners
     if (menuToggle) {
       menuToggle.addEventListener("click", handleToggleClick);
@@ -197,6 +206,7 @@ function Menu() {
 
     menuLinks.forEach((link) => {
       link.addEventListener("mouseover", handleLinkMouseOver);
+      link.addEventListener("click", handleLinkClickEvent);
     });
 
     // Cleanup function
@@ -207,15 +217,16 @@ function Menu() {
 
       menuLinks.forEach((link) => {
         link.removeEventListener("mouseover", handleLinkMouseOver);
+        link.removeEventListener("click", handleLinkClickEvent);
       });
     };
-  }, [handleMenuToggle, handleLinkHover]);
+  }, [handleMenuToggle, handleLinkHover, handleLinkClick]);
 
   return (
     <>
       <nav>
         <div className="logo">
-          <a href="#">Joshua Alvarez</a>
+          <a href="#"></a>
         </div>
         <div className="menu-toggle" ref={menuToggleRef}>
           <p id="menu-open">Menu</p>
@@ -234,7 +245,10 @@ function Menu() {
             <div className="col-sm">
               <div className="menu-links">
                 <div className="link">
-                  <a href="#" data-img="/img/menu/img-1.png">
+                  <a
+                    href="#professional-experience"
+                    data-img="/img/menu/img-1.png"
+                  >
                     Experience
                   </a>
                 </div>
@@ -256,7 +270,9 @@ function Menu() {
               </div>
               <div className="menu-socials">
                 <div className="social">
-                  <a href="https://www.linkedin.com/in/joshuayherrera/">LinkedIn</a>
+                  <a href="https://www.linkedin.com/in/joshuayherrera/">
+                    LinkedIn
+                  </a>
                 </div>
                 <div className="social">
                   <a href="https://github.com/joshuayherrera">Github</a>
