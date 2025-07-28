@@ -253,12 +253,12 @@ function Menu() {
                   </a>
                 </div>
                 <div className="link">
-                  <a href="#" data-img="/img/menu/img-2.png">
+                  <a href="#projects" data-img="/img/menu/img-2.png">
                     Projects
                   </a>
                 </div>
                 <div className="link">
-                  <a href="#" data-img="/img/menu/img-3.png">
+                  <a href="#skills" data-img="/img/menu/img-3.png">
                     Skills
                   </a>
                 </div>

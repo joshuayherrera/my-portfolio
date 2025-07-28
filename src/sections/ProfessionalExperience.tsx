@@ -1,7 +1,9 @@
+import CurvedLoop from "@/components/ui/curvedLoop.component";
 import { experience } from "@/data/experienceItems";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+
 
 function ProfessionalExperience() {
   gsap.registerPlugin(ScrollTrigger);
@@ -28,20 +30,21 @@ function ProfessionalExperience() {
       scrollTrigger: {
         trigger: ".cards-wrapper",
         start: "top top",
-        end: "bottom top",
+        end: "+=140%",
         pin: true,
         scrub: 1,
+        pinSpacing: false,
       },
     });
 
     tl.to(".card", {
       height: 95,
-      stagger: 0.5,
+      stagger: 0.3,
     });
   });
 
   return (
-    <section id="professional-experience" className="min-h-screen bg-neutral-950 text-white overflow-hidden">
+    <section id="professional-experience" className="min-h-screen bg-neutral-950 text-[#e3e3db] overflow-hidden">
       <div className="px-8 md:px-16 lg:px-24 xl:px-32 py-16 mb-12">
         <h2 className="font-stardom experience-title text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8">
           Professional Experience
@@ -63,7 +66,7 @@ function ProfessionalExperience() {
                   <h1 className="text-3xl md:text-4xl font-bold font-stardom">
                     {card.title}
                   </h1>
-                  <h2 className="text-xl md:text-2xl text-blue-400 mt-2">
+                  <h2 className="text-xl md:text-2xl text-[#f93535] mt-2">
                     {card.company}
                   </h2>
                   <span className="text-sm text-gray-400 mt-1 block">
@@ -74,12 +77,12 @@ function ProfessionalExperience() {
 
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 w-full max-w-7xl">
                 <div className="flex-1 max-w-2xl">
-                  <p className="text-base md:text-lg opacity-80 leading-relaxed mb-6">
+                  <p className="text-base md:text-lg opacity-80 leading-relaxed mb-12">
                     {card.text}
                   </p>
 
                   <div className="achievements">
-                    <h4 className="text-sm font-semibold text-gray-300 mb-3">
+                    <h4 className="text-sm font-semibold mb-3 mt-4">
                       Key Achievements:
                     </h4>
                     <ul className="space-y-2">
@@ -88,7 +91,7 @@ function ProfessionalExperience() {
                           key={index}
                           className="text-sm opacity-70 flex items-center gap-2"
                         >
-                          <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 flex-shrink-0"></span>
+                          <span className="w-2 h-2 bg-[#f93535] rounded-full mr-3 flex-shrink-0"></span>
                           {achievement}
                         </li>
                       ))}
@@ -106,7 +109,10 @@ function ProfessionalExperience() {
               </div>
             </div>
           );
-        })}
+        })}      
+        <div className="flex mb-16" >
+          <CurvedLoop marqueeText="Joshua Alvarez ✦ Frontend Developer ✦" interactive className="text-[#e3e3db]"/>
+        </div>
       </div>
     </section>
   );

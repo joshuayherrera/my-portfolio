@@ -1,10 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import SocialLinks from "./components/SocialLinks";
-import HeroSection from "./sections/HeroSection";
 import Menu from "./components/Menu";
 import Preloader from "./components/Preloader";
-import ProfessionalExperience from "./sections/ProfessionalExperience";
+import ProjectsSection from "./sections/ProjectsSection";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,14 +14,12 @@ function App() {
 
   return (
     <>
-      {/* Contenido principal siempre visible pero con h1 inicialmente oculto */}
       <Menu />
       <div className="min-h-screen relative">
-        <HeroSection isVisible={!isLoading} />
-        <ProfessionalExperience />
+        <ProjectsSection />  
         <SocialLinks />
       </div>
-
+      
       {/* Preloader encima del contenido */}
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
     </>

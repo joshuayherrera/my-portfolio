@@ -42,7 +42,7 @@ function HeroSection({ isVisible = true }: HeroSectionProps) {
     }
   }, [isVisible]);
   return (
-    <main className="relative flex h-screen w-screen overflow-hidden bg-black/[0.96] antialiased items-center justify-center">
+    <main className="relative flex min-h-screen w-full overflow-hidden bg-black/[0.96] antialiased items-center justify-center">
       <div
         className={cn(
           "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",
@@ -57,7 +57,7 @@ function HeroSection({ isVisible = true }: HeroSectionProps) {
         <article className="flex justify-center items-center w-full">
           <h1
             ref={nameRef}
-            className="font-stardom text-4xl md:text-5xl lg:text-6xl text-white font-bold text-center px-4"
+            className="font-stardom text-4xl md:text-5xl lg:text-6xl text-[#e3e3db] font-bold text-center px-4"
           >
             Joshua Alvarez
           </h1>
