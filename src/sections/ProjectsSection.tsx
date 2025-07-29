@@ -30,16 +30,16 @@ const config: AnimationConfig = {
 };
 
 const spotlightItems: SpotlightItem[] = [
-  { name: "Silent Arc", img: "/img/projects/img_1.jpg" },
-  { name: "Bloom24", img: "/img/projects/img_2.jpg" },
-  { name: "Glass Fade", img: "/img/projects/img_3.jpg" },
-  { name: "Echo 9", img: "/img/projects/img_4.jpg" },
-  { name: "Velvet Loop", img: "/img/projects/img_5.jpg" },
-  { name: "Field Two", img: "/img/projects/img_6.jpg" },
-  { name: "Pale Thread", img: "/img/projects/img_7.jpg" },
-  { name: "Stillroom", img: "/img/projects/img_8.jpg" },
-  { name: "Ghostline", img: "/img/projects/img_9.jpg" },
-  { name: "Mono 73", img: "/img/projects/img_10.jpg" },
+  { name: "Algora AI", img: "/img/projects/img_1.jpg" },
+  { name: "Project 2", img: "/img/projects/img_2.jpg" },
+  { name: "Project 3", img: "/img/projects/img_3.jpg" },
+  { name: "Project 4", img: "/img/projects/img_4.jpg" },
+  { name: "Project 5", img: "/img/projects/img_5.jpg" },
+  { name: "Project 6", img: "/img/projects/img_6.jpg" },
+  { name: "Project 7", img: "/img/projects/img_7.jpg" },
+  { name: "Project 8", img: "/img/projects/img_8.jpg" },
+  { name: "Project 9", img: "/img/projects/img_9.jpg" },
+  { name: "Project 10", img: "/img/projects/img_10.jpg" },
 ];
 
 const ProjectsSection: React.FC = () => {

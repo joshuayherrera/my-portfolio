@@ -216,6 +216,7 @@ export default function Skills() {
           <div
             key={name}
             className="name"
+            data-skill={name}
             ref={(el) => {
               nameElementsRef.current[index + 1] = el;
             }}

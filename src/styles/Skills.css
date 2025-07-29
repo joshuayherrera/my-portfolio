@@ -63,10 +63,19 @@ img {
   font-weight: 900;
   letter-spacing: -0.2rem;
   line-height: 1;
-  color: #f93535;
   user-select: none;
   transform: translateY(100%);
 }
+
+.name[data-skill="HTML"] h1 { color: #EF652A; }
+.name[data-skill="CSS"] h1 { color: #2965F1; }
+.name[data-skill="JavaScript"] h1 { color: #F0DB4F; }
+.name[data-skill="React.JS"] h1 { color: #087EA4; }
+.name[data-skill="TypeScript"] h1 { color: #3178C6; }
+.name[data-skill="TailwindCss"] h1 { color: #38BDF8; }
+.name[data-skill="Next.JS"] h1 { color: #e3e3db; }
+.name[data-skill="Git"] h1 { color: #DE4C36; }
+.name[data-skill="GitHub"] h1 { color: #e3e3db; }
 
 .name.default h1 {
   color: #e3e3db;

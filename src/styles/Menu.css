@@ -34,16 +34,6 @@ nav {
   z-index: 41;
 }
 
-nav {
-  position: fixed;
-  width: 100dvw;
-  padding: 2.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 41;
-}
-
 .logo a {
   font-weight: 600;
 }
@@ -144,10 +134,12 @@ nav {
 .link a {
   font-size: 3.5rem;
   letter-spacing: -0.02rem;
+  font-family: Stardom;
 }
 
 .social a {
   color: #8f8f8f;
+  font-family: Stardom;
 }
 
 .social a:hover {
