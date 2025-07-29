@@ -31,15 +31,15 @@ const config: AnimationConfig = {
 
 const spotlightItems: SpotlightItem[] = [
   { name: "Algora AI", img: "/img/projects/img_1.jpg" },
-  { name: "Project 2", img: "/img/projects/img_2.jpg" },
-  { name: "Project 3", img: "/img/projects/img_3.jpg" },
-  { name: "Project 4", img: "/img/projects/img_4.jpg" },
-  { name: "Project 5", img: "/img/projects/img_5.jpg" },
-  { name: "Project 6", img: "/img/projects/img_6.jpg" },
-  { name: "Project 7", img: "/img/projects/img_7.jpg" },
-  { name: "Project 8", img: "/img/projects/img_8.jpg" },
-  { name: "Project 9", img: "/img/projects/img_9.jpg" },
-  { name: "Project 10", img: "/img/projects/img_10.jpg" },
+  { name: "Isochrome", img: "/img/projects/img_2.jpg" },
+  { name: "Format Archive", img: "/img/projects/img_3.jpg" },
+  { name: "Unusual", img: "/img/projects/img_4.jpg" },
+  { name: "Velasco Solari", img: "/img/projects/img_5.jpg" },
+  { name: "Balanced Pitch", img: "/img/projects/img_6.jpg" },
+  { name: "Origin Studio", img: "/img/projects/img_7.jpg" },
+  { name: "Coming Soon...", img: "/img/projects/img_8.jpg" },
+  { name: "Coming Soon...", img: "/img/projects/img_9.jpg" },
+  { name: "Coming Soon...", img: "/img/projects/img_10.jpg" },
 ];
 
 const ProjectsSection: React.FC = () => {

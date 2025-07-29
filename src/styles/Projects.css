@@ -1,5 +1,5 @@
 .projects-section {
-  font-family: "PP Neue Montreal", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Barlow Condensed", "sans-serif", apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
 }
 
@@ -64,9 +64,9 @@
 }
 
 .spotlight-intro-text p {
-  font-family: "Stardom";
-  font-size: 4rem;
-  font-weight: 500;
+  font-family: Stardom;
+  font-size: 6rem;
+  font-weight: 600;
   line-height: 1;
   color: #000;
   margin: 0;
@@ -218,6 +218,7 @@
   .spotlight-images {
     width: 100%;
     min-width: unset;
+    right: -50vw;
   }
 
   .spotlight-img {

@@ -4,6 +4,7 @@ import SocialLinks from "./components/SocialLinks";
 import Menu from "./components/Menu";
 import Preloader from "./components/Preloader";
 import ProjectsSection from "./sections/ProjectsSection";
+import Footer from "./components/Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +17,8 @@ function App() {
     <>
       <Menu />
       <div className="min-h-screen relative">
-        <ProjectsSection />  
+        <ProjectsSection />
+        <Footer />  
         <SocialLinks />
       </div>
       
