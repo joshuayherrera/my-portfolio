@@ -130,7 +130,7 @@
 @media (max-width: 1000px) {
   .footer {
     height: max-content;
-    padding-top: 8rem;
+    padding: 4rem 0 4rem 2rem;
   }
 
   .footer .container .footer-top .footer-col:nth-child(2) {
@@ -138,7 +138,7 @@
   }
 
   .footer .footer-email-row {
-    width: 100%;
+    width: 90%;
   }
 
   .footer .footer-email-row input {
@@ -161,7 +161,7 @@
 
   .footer .footer-bottom .footer-col:nth-child(2) {
     flex-direction: column;
-    gap: 4rem;
+    gap: 2.5rem;
   }
 
   .footer .footer-copyright .footer-col:nth-child(1) {

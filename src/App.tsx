@@ -1,17 +1,10 @@
-import { useState } from "react";
 import "./App.css";
 import SocialLinks from "./components/SocialLinks";
 import Menu from "./components/Menu";
-import Preloader from "./components/Preloader";
 import ProjectsSection from "./sections/ProjectsSection";
 import Footer from "./components/Footer";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  const handlePreloaderComplete = () => {
-    setIsLoading(false);
-  };
 
   return (
     <>
@@ -21,9 +14,6 @@ function App() {
         <Footer />  
         <SocialLinks />
       </div>
-      
-      {/* Preloader encima del contenido */}
-      {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
     </>
   );
 }

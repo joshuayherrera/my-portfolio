@@ -1,0 +1,62 @@
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: center;
+}
+
+.hero-copy-wrapper:nth-child(1) h1 {
+  position: relative;
+  top: 50px;
+  font-weight: 400;
+  font-size: 80px;
+  color: white;
+}
+
+.hero-copy-wrapper:nth-child(2) h1 {
+  position: relative;
+  font-size: 300px;
+  font-family: Stardom;
+  font-weight: 800;
+  color: white;
+}
+
+.hero-tagline {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 12rem;
+}
+
+@media (max-width: 1200px) {
+  .hero-copy-wrapper:nth-child(2) h1 {
+    position: relative;
+    top: 1rem;
+    font-size: 180px;
+    color: white;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-copy-wrapper:nth-child(1) h1 {
+    position: relative;
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 60px;
+    color: white;
+  }
+
+  .hero-copy-wrapper:nth-child(2) h1 {
+    position: relative;
+    top: 1rem;
+    font-size: 120px;
+    color: white;
+  }
+
+  .hero-tagline {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    top: 20rem;
+  }
+}

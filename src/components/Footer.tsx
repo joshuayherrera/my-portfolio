@@ -36,7 +36,7 @@ function Footer() {
     }
   }
   return (
-    <footer className="footer">
+    <footer id="connect" className="footer">
       <div className="container">
         <div className="footer-top">
           <div className="footer-col">

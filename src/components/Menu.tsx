@@ -263,7 +263,7 @@ function Menu() {
                   </a>
                 </div>
                 <div className="link">
-                  <a href="#" data-img="/img/menu/img-4.png">
+                  <a href="#connect" data-img="/img/menu/img-4.png">
                     Connect
                   </a>
                 </div>
