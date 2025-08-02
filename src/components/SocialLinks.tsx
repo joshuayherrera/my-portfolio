@@ -11,8 +11,8 @@ function SocialLinks() {
   const containerRef = useRef<HTMLDivElement>(null);
   const handleDownloadCV = () => {
     const link = document.createElement("a");
-    link.href = "/files/CV_Joshua_Alvarez.pdf";
-    link.download = "CV_Joshua_Alvarez.pdf";
+    link.href = "/files/Joshua_Alvarez_CV.pdf";
+    link.download = "Joshua_Alvarez_CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -21,7 +21,7 @@ function SocialLinks() {
     {
       title: "Download CV",
       icon: <IconDownload className="h-full w-full text-white" />,
-      href: "/files/CV_Joshua_Alvarez.pdf",
+      href: "/files/Joshua_Alvarez_CV.pdf",
       onClick: handleDownloadCV,
       target: "_blank",
     },
