@@ -11,6 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface SpotlightItem {
   name: string;
   img: string;
+  src: string;
 }
 
 interface AnimationConfig {
@@ -30,16 +31,32 @@ const config: AnimationConfig = {
 };
 
 const spotlightItems: SpotlightItem[] = [
-  { name: "Algora AI", img: "/img/projects/img_1.jpg" },
-  { name: "Isochrome", img: "/img/projects/img_2.jpg" },
-  { name: "Format Archive", img: "/img/projects/img_3.jpg" },
-  { name: "Unusual", img: "/img/projects/img_4.jpg" },
-  { name: "Velasco Solari", img: "/img/projects/img_5.jpg" },
-  { name: "Balanced Pitch", img: "/img/projects/img_6.jpg" },
-  { name: "Origin Studio", img: "/img/projects/img_7.jpg" },
-  { name: "Coming Soon...", img: "/img/projects/img_8.jpg" },
-  { name: "Coming Soon...", img: "/img/projects/img_9.jpg" },
-  { name: "Coming Soon...", img: "/img/projects/img_10.jpg" },
+  {
+    name: "Algora AI",
+    img: "/img/projects/img_1.jpg",
+    src: "https://algora.joshuaherrera.com/",
+  },
+  {
+    name: "Isochrome",
+    img: "/img/projects/img_2.jpg",
+    src: "https://isochrome.joshuaherrera.com/",
+  },
+  {
+    name: "Format Archive",
+    img: "/img/projects/img_3.jpg",
+    src: "https://formatarchive.joshuaherrera.com/",
+  },
+  {
+    name: "Unusual",
+    img: "/img/projects/img_4.jpg",
+    src: "https://unusual.joshuaherrera.com/",
+  },
+  { name: "Velasco Solari", img: "/img/projects/img_5.jpg", src: "" },
+  { name: "Balanced Pitch", img: "/img/projects/img_6.jpg", src: "" },
+  { name: "Origin Studio", img: "/img/projects/img_7.jpg", src: "" },
+  { name: "Coming Soon...", img: "/img/projects/img_8.jpg", src: "" },
+  { name: "Coming Soon...", img: "/img/projects/img_9.jpg", src: "" },
+  { name: "Coming Soon...", img: "/img/projects/img_10.jpg", src: "" },
 ];
 
 const ProjectsSection: React.FC = () => {
@@ -128,8 +145,24 @@ const ProjectsSection: React.FC = () => {
 
         spotlightItems.forEach((item, index) => {
           const titleElement = document.createElement("h1");
-          titleElement.textContent = item.name;
           titleElement.style.opacity = index === 0 ? "1" : "0.25";
+
+          if (item.src && item.src.trim() !== "") {
+            // Create clickable link for projects with URLs
+            const linkElement = document.createElement("a");
+            linkElement.href = item.src;
+            linkElement.target = "_blank";
+            linkElement.rel = "noopener noreferrer";
+            linkElement.textContent = item.name;
+            linkElement.style.textDecoration = "none";
+            linkElement.style.color = "inherit";
+            linkElement.style.cursor = "pointer";
+            titleElement.appendChild(linkElement);
+          } else {
+            // Plain text for projects without URLs
+            titleElement.textContent = item.name;
+          }
+
           titlesContainer.appendChild(titleElement);
           newTitleElements.push(titleElement);
 
@@ -148,6 +181,11 @@ const ProjectsSection: React.FC = () => {
         gsap.set(titlesContainer, {
           y: window.innerHeight,
         });
+
+        // Hide the background image initially
+        if (backgroundImageRef.current) {
+          gsap.set(backgroundImageRef.current, { opacity: 0 });
+        }
 
         scrollTriggerInstance = ScrollTrigger.create({
           trigger: spotlightRef.current,
@@ -179,6 +217,7 @@ const ProjectsSection: React.FC = () => {
               if (backgroundImageRef.current) {
                 gsap.set(backgroundImageRef.current, {
                   transform: `scale(${animationProgress})`,
+                  opacity: 1, // Show background image during scaling animation
                 });
               }
               if (backgroundImgRef.current) {
@@ -197,8 +236,12 @@ const ProjectsSection: React.FC = () => {
                 });
               }
             } else if (progress > 0.2 && progress <= 0.25) {
-              if (backgroundImageRef.current)
-                gsap.set(backgroundImageRef.current, { transform: "scale(1)" });
+              if (backgroundImageRef.current) {
+                gsap.set(backgroundImageRef.current, {
+                  transform: "scale(1)",
+                  opacity: 1, // Show background image when animation starts
+                });
+              }
               if (backgroundImgRef.current)
                 gsap.set(backgroundImgRef.current, { transform: "scale(1)" });
 

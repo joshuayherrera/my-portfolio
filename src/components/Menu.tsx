@@ -270,12 +270,12 @@ function Menu() {
               </div>
               <div className="menu-socials">
                 <div className="social">
-                  <a href="https://www.linkedin.com/in/joshuayherrera/">
+                  <a href="https://www.linkedin.com/in/joshuayherrera/" target="_blank">
                     LinkedIn
                   </a>
                 </div>
                 <div className="social">
-                  <a href="https://github.com/joshuayherrera">Github</a>
+                  <a href="https://github.com/joshuayherrera" target="_blank">Github</a>
                 </div>
               </div>
             </div>
