@@ -51,7 +51,11 @@ const spotlightItems: SpotlightItem[] = [
     img: "/img/projects/img_4.jpg",
     src: "https://unusual.joshuaherrera.com/",
   },
-  { name: "Velasco Solari", img: "/img/projects/img_5.jpg", src: "" },
+  { 
+    name: "Eric Heights", 
+    img: "/img/projects/img_5.jpg", 
+    src: "https://eric-heights.joshuaherrera.com/" 
+  },
   { name: "Balanced Pitch", img: "/img/projects/img_6.jpg", src: "" },
   { name: "Origin Studio", img: "/img/projects/img_7.jpg", src: "" },
   { name: "Coming Soon...", img: "/img/projects/img_8.jpg", src: "" },

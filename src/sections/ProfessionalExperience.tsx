@@ -4,7 +4,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-
 function ProfessionalExperience() {
   gsap.registerPlugin(ScrollTrigger);
 
