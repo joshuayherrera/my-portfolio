@@ -154,11 +154,6 @@
   line-height: inherit;
   display: block;
   width: 100%;
-  transition: opacity 0.2s ease;
-}
-
-.spotlight-titles h1 a:hover {
-  opacity: 0.8;
 }
 
 .spotlight-images {

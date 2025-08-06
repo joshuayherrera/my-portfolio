@@ -245,14 +245,6 @@ function Menu() {
             <div className="col-sm">
               <div className="menu-links">
                 <div className="link">
-                  <a
-                    href="#professional-experience"
-                    data-img="/img/menu/img-1.png"
-                  >
-                    Experience
-                  </a>
-                </div>
-                <div className="link">
                   <a href="#projects" data-img="/img/menu/img-2.png">
                     Projects
                   </a>

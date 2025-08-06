@@ -51,16 +51,13 @@ const spotlightItems: SpotlightItem[] = [
     img: "/img/projects/img_4.jpg",
     src: "https://unusual.joshuaherrera.com/",
   },
-  { 
-    name: "Eric Heights", 
-    img: "/img/projects/img_5.jpg", 
-    src: "https://eric-heights.joshuaherrera.com/" 
+  {
+    name: "Eric Heights",
+    img: "/img/projects/img_5.jpg",
+    src: "https://eric-heights.joshuaherrera.com/",
   },
   { name: "Balanced Pitch", img: "/img/projects/img_6.jpg", src: "" },
   { name: "Origin Studio", img: "/img/projects/img_7.jpg", src: "" },
-  { name: "Coming Soon...", img: "/img/projects/img_8.jpg", src: "" },
-  { name: "Coming Soon...", img: "/img/projects/img_9.jpg", src: "" },
-  { name: "Coming Soon...", img: "/img/projects/img_10.jpg", src: "" },
 ];
 
 const ProjectsSection: React.FC = () => {
@@ -159,7 +156,6 @@ const ProjectsSection: React.FC = () => {
             linkElement.rel = "noopener noreferrer";
             linkElement.textContent = item.name;
             linkElement.style.textDecoration = "none";
-            linkElement.style.color = "inherit";
             linkElement.style.cursor = "pointer";
             titleElement.appendChild(linkElement);
           } else {
@@ -194,7 +190,7 @@ const ProjectsSection: React.FC = () => {
         scrollTriggerInstance = ScrollTrigger.create({
           trigger: spotlightRef.current,
           start: "top top",
-          end: `+=${window.innerHeight * 10}px`,
+          end: `+=${window.innerHeight * 4.2}px`,
           pin: true,
           pinSpacing: true,
           scrub: 1,
@@ -338,7 +334,7 @@ const ProjectsSection: React.FC = () => {
 
                 currentActiveIndexRef.current = closestIndex;
               }
-            } else if (progress > 0.95) {
+            } else if (progress > 0.75) {
               if (spotlightHeaderRef.current)
                 spotlightHeaderRef.current.style.opacity = "0";
               if (titlesContainerElementRef.current) {

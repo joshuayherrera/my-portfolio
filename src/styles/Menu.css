@@ -19,8 +19,8 @@ p {
   position: relative;
   text-decoration: none;
   color: #fff;
-  font-size: 1rem;
-  font-weight: 300;
+  font-size: 1.4rem;
+  font-weight: 400;
   user-select: none;
 }
 
@@ -132,14 +132,16 @@ nav {
 }
 
 .link a {
-  font-size: 3.5rem;
+  font-size: 4.5rem;
+  font-weight: 600;
   letter-spacing: -0.02rem;
-  font-family: Stardom;
+  font-family: Barlow;
 }
 
 .social a {
   color: #8f8f8f;
-  font-family: Stardom;
+  font-family: Barlow;
+  font-size: 1.5rem;
 }
 
 .social a:hover {
